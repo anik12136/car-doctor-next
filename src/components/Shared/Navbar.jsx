@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import { IoBagHandleOutline } from "react-icons/io5";
+import { IoSearch } from "react-icons/io5";
+
 
 const Navbar = () => {
 
@@ -82,12 +85,16 @@ const Navbar = () => {
                     <div className="flex gap-6">
                         {
                             navItems.map((item) =>
-                            (<Link href={`/${item.path}`} key={item.path}> {item.title}</Link>)
-                        )}
+                            (<Link href={`/${item.path}`} key={item.path} className="font-semibold hover:text-primary duration-300">
+                                {item.title}
+                            </Link>)
+                            )}
                     </div>
                 </div>
-                <div className="navbar-end">
-                    <a className="btn">Button</a>
+                <div className="navbar-end flex gap-6">
+                    <IoSearch className="text-xl hover:text-primary duration-300"/>
+                    <IoBagHandleOutline className="text-xl hover:text-primary duration-300"/>
+                    <a className="btn btn-outline px-8 hover:text-white">Appointment</a>
                 </div>
             </div>
         </div>
